@@ -53,6 +53,58 @@ public class Main {
         System.out.println(string + " is palindrome? " + !notPalindrome);
     }
 
+    /*
+    Example 4 (Palindrome Dates between two different years)
+    01/02/2010
+    11/02/2011
+    02/02/2020
+    12/02/2021
+    03/02/2030
+    04/02/2040
+    05/02/2050
+     */
+    static void printPalindromeDates(int start, int end) {
+        for (int yyyy = start; yyyy <= end; yyyy++) {
+            String mm = Integer.toString(yyyy % 10)
+                    + Integer.toString((yyyy / 10) % 10);
+            String dd = Integer.toString((yyyy / 100) % 10)
+                    + Integer.toString((yyyy / 1000) % 10);
+            int m = Integer.parseInt(mm);
+            int d = Integer.parseInt(dd);
+
+            if (m >= 1 && m <= 12) { // Valid month.
+                if (d >= 1) {// Valid lower limit for day.
+                    // Upper limit must be less than number of days in each
+                    // month (including leap year)
+                    boolean validDay = false;
+                    int days[] = { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30,
+                            31 };
+                    if (m == 2) { // Since its Feb, we need to check for leap
+                        // year.
+                        if ((yyyy % 4 == 0 && yyyy % 100 != 0)
+                                || yyyy % 400 == 0) {
+                            if (d <= 29) {
+                                validDay = true;
+                            }
+                        } else {
+                            if (d <= days[m - 1]) {
+                                validDay = true;
+                            }
+                        }
+                    } else { // Not feb, just pick days from the array.
+                        if (d <= days[m - 1]) {
+                            validDay = true;
+                        }
+                    }
+                    if (validDay) { // Valid day && Valid month
+                        System.out.println(mm + "/" + dd + "/" + yyyy);
+
+                    }
+                }
+            }
+        }
+    }
+
 
     public static void main(String[] args) {
 
@@ -100,6 +152,18 @@ public class Main {
         isPalindrome3("raceCAR");//true NOT CASE SENSITIVE
         isPalindrome3("Doc, note, I dissent! A fast /never * prevents a fatness. I diet on cod?");
         //true Example complex sentence with regex
+
+        /*
+        Example 4 Palindrome Dates between 2 Years
+        01/02/2010
+        11/02/2011
+        02/02/2020
+        12/02/2021
+        03/02/2030
+        04/02/2040
+        05/02/2050
+         */
+        printPalindromeDates(2010, 2050);
 
         /*
         Does NOT work with complex sentences only single words
