@@ -1,15 +1,11 @@
 /*
 Disclaimer:
 I did not personally write any of these methods or functions. I did some research on the internet
-and found a few examples of detecting a palindrome in java code. They were primarily the top hits within the search
-results, but I forgot to properly cite each example before I closed my browser. Each example is unique in its own
+and found a few examples of detecting a palindrome in java code. Each example is unique in its own
 fashion (Case sensitivity, regular expressions, spaces between letters/words). I wanted to have a collection of
 different ideas and code to in case anyone else wanted to see how the same example sentences would react to the
-different methods/functions.
-
-
-***I am currently trying to find each example's source and properly included them in each example's description***
-*
+different methods/functions. All examples have a source link that you can type into your browser to see the discussions
+and comments.
  */
 
 package com.company;
@@ -21,6 +17,7 @@ public class Main {
 
     /*
     Example 1
+    Source: http://stackoverflow.com/questions/4138827/check-string-for-palindrome
     All one line (not really attractive)
     Is Successful with complex sentences AND simple words
     Does Handle regex such as "!"
@@ -37,6 +34,7 @@ public class Main {
 
     /*
     Example 2
+    Source: http://stackoverflow.com/questions/4138827/check-string-for-palindrome
     Is Successful with complex sentences AND simple words
     Simplest code, by using delimiter to get rid of empty spaces
     Does NOT Handle regex such as "!"
@@ -50,6 +48,7 @@ public class Main {
 
     /*
     Example 3
+    Source: http://stackoverflow.com/questions/15401630/java-check-if-a-string-is-a-palindrome-case-insensitive
     Is Successful with complex sentences AND simple words
     Does Handle regex such as "!"
     NOT CASE SENSITIVE
@@ -72,6 +71,7 @@ public class Main {
 
     /*
     Example 4 (Palindrome Dates between two different years)
+    Source: http://www.careercup.com/question?id=3236729
     01/02/2010
     11/02/2011
     02/02/2020
