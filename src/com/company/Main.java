@@ -1,4 +1,21 @@
+/*
+Full Disclosure:
+I did not personally write any of these methods or functions. I did some research on the internet
+and found a few examples of detecting a palindrome in java code. They were primarily the top hits within the search
+results, but I forgot to properly cite each example before I closed my browser. Each example is unique in its own
+fashion (Case sensitivity, regular expressions, spaces between letters/words). I wanted to have a collection of
+different ideas and code to in case anyone else wanted to see how the same example sentences would react to the
+different methods/functions.
+
+
+***I am currently trying to find each example's source and properly included them in each example's description***
+*
+ */
+
 package com.company;
+
+import javax.print.DocFlavor;
+import java.util.Date;
 
 public class Main {
 
@@ -65,12 +82,18 @@ public class Main {
      */
     static void printPalindromeDates(int start, int end) {
         for (int yyyy = start; yyyy <= end; yyyy++) {
+            System.out.println("This is year " + yyyy);
             String mm = Integer.toString(yyyy % 10)
                     + Integer.toString((yyyy / 10) % 10);
+            System.out.println("This is mm " + mm);
             String dd = Integer.toString((yyyy / 100) % 10)
                     + Integer.toString((yyyy / 1000) % 10);
+            System.out.println("This is dd " + dd);
             int m = Integer.parseInt(mm);
+            System.out.println("This is m " + m);
             int d = Integer.parseInt(dd);
+            System.out.println("This is d " + d);
+
 
             if (m >= 1 && m <= 12) { // Valid month.
                 if (d >= 1) {// Valid lower limit for day.
@@ -163,7 +186,13 @@ public class Main {
         04/02/2040
         05/02/2050
          */
-        printPalindromeDates(2010, 2050);
+        printPalindromeDates(2000, 2050);
+
+
+    }//End of main method
+
+}//End of Main Class
+
 
         /*
         Does NOT work with complex sentences only single words
@@ -184,9 +213,5 @@ public class Main {
             System.out.println("ITS NOT A PALINDROME");
 
         return;
-        */
 
-    }//End of main method
-
-}//End of Main Class
-
+*/
