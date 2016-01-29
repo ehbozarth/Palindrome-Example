@@ -1,5 +1,5 @@
 /*
-Full Disclosure:
+Disclaimer:
 I did not personally write any of these methods or functions. I did some research on the internet
 and found a few examples of detecting a palindrome in java code. They were primarily the top hits within the search
 results, but I forgot to properly cite each example before I closed my browser. Each example is unique in its own
