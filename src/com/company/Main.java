@@ -57,13 +57,15 @@ public class Main {
         boolean notPalindrome = false;
         String string = ispalindrome;
 
-        string = string.replaceAll("[^a-zA-Z]+","").toLowerCase();
+        string = string.replaceAll("[^a-zA-Z0-9]+","").toLowerCase();
 
         char[] array = string.toCharArray();
         for(int i=0, j=array.length-1; i<j; i++, j--) {
             if(array[i] == array[j]) {
                 notPalindrome = true;
-                break;
+            }
+            else{
+                notPalindrome = false;
             }
         }
         System.out.println(string + " is palindrome? " + notPalindrome);
@@ -82,17 +84,17 @@ public class Main {
      */
     static void printPalindromeDates(int start, int end) {
         for (int yyyy = start; yyyy <= end; yyyy++) {
-            System.out.println("This is year " + yyyy);
+            //System.out.println("This is year " + yyyy);
             String mm = Integer.toString(yyyy % 10)
                     + Integer.toString((yyyy / 10) % 10);
-            System.out.println("This is mm " + mm);
+            //System.out.println("This is mm " + mm);
             String dd = Integer.toString((yyyy / 100) % 10)
                     + Integer.toString((yyyy / 1000) % 10);
-            System.out.println("This is dd " + dd);
+            //System.out.println("This is dd " + dd);
             int m = Integer.parseInt(mm);
-            System.out.println("This is m " + m);
+            //System.out.println("This is m " + m);
             int d = Integer.parseInt(dd);
-            System.out.println("This is d " + d);
+            //System.out.println("This is d " + d);
 
 
             if (m >= 1 && m <= 12) { // Valid month.
@@ -169,7 +171,7 @@ public class Main {
         System.out.println("Is Palindrome Example 3\n");
         isPalindrome3("hiya");//false
         isPalindrome3("star buttons not tub rats");//true Example complex sentence
-        isPalindrome3("Never Odd or Even1");//comes up true, ignores the 1, should be FALSE
+        isPalindrome3("Never Odd or Even1");//false, fixed to include numbers as part of string
         isPalindrome3("Never Odd or Even");//true Example complex sentence
         isPalindrome3("stab nail at ill Italian bats!");//true Example complex sentence with "!"
         isPalindrome3("raceCAR");//true NOT CASE SENSITIVE
@@ -192,3 +194,6 @@ public class Main {
     }//End of main method
 
 }//End of Main Class
+
+
+
