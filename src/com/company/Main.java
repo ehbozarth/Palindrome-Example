@@ -61,12 +61,12 @@ public class Main {
 
         char[] array = string.toCharArray();
         for(int i=0, j=array.length-1; i<j; i++, j--) {
-            if(array[i] != array[j]) {
+            if(array[i] == array[j]) {
                 notPalindrome = true;
                 break;
             }
         }
-        System.out.println(string + " is palindrome? " + !notPalindrome);
+        System.out.println(string + " is palindrome? " + notPalindrome);
     }
 
     /*
@@ -192,26 +192,3 @@ public class Main {
     }//End of main method
 
 }//End of Main Class
-
-
-        /*
-        Does NOT work with complex sentences only single words
-        Only Successful on simple palindromes such Mom, Dad, racecar, etc
-        Does NOT handle "!" or other regex
-
-        Scanner in=new Scanner(System.in);
-        System.out.println("ENTER YOUR STRING: ");
-        String a=in.nextLine().toLowerCase();
-        System.out.println("GIVEN STRING IS: "+a);
-        StringBuffer str=new StringBuffer(a.toLowerCase());
-        StringBuffer str2=new StringBuffer(str.reverse());
-        String s2=new String(str2);
-        System.out.println("THE REVERSED STRING IS: "+str2);
-        if(a.equals(s2))
-            System.out.println("ITS A PALINDROME");
-        else
-            System.out.println("ITS NOT A PALINDROME");
-
-        return;
-
-*/
